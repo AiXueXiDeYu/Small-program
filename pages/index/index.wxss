@@ -16,5 +16,6 @@
 }
 .tst_userinfo {
     background-color: #fff;
-    
+    height: 160rpx;
+    border-radius: 16rpx;
 }
