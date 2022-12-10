@@ -5,8 +5,8 @@ Component({
    */
   properties: {
     recommends: {
-      type:Array,
-      value:[]
+      type: Array,
+      value: []
     }
   },
 

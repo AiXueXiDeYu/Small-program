@@ -1,10 +1,10 @@
-// components/w-swiper/w-swiper.js
+// components/goods/goods.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    images: {
+    goodslist: {
       type: Array,
       value: []
     }

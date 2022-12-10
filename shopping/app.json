@@ -1,6 +1,6 @@
 {
-  "pages": ["pages/home/home"
-    
+  "pages": [
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",

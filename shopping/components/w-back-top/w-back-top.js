@@ -1,13 +1,10 @@
-// components/w-swiper/w-swiper.js
+// components/w-back-top/w-back-top.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    images: {
-      type: Array,
-      value: []
-    }
+
   },
 
   /**

@@ -6,9 +6,9 @@ Component({
   // 接收外界传值的属性
   properties: {
     titles: {
-      // 外界一定要给我有个数组 校验
+      // 一定要给我个数组 校验
       type: Array,
-      // 默认值
+      // 默认值 
       value: []
     }
   },
@@ -25,22 +25,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    setCurrentIndex(index) {
+      this.setData({
+        currentIndex:index
+      })
+    },
     itemClick(e) {
-      // 1.设置最新的index
+      // console.log('--------------')
       this.setData({
         currentIndex: e.currentTarget.dataset.index
       })
 
       // 2.发出时间
       const data = {index: this.data.currentIndex}
-      // 向外报告 triggerEvent
+      // 向外报告 triggerEvent  bind:tabclick
       this.triggerEvent("tabclick", data, {})
-    },
-    setCurrentIndex(index) {
-      console.log(index)
-      this.setData({
-        currentIndex: index
-      })
     }
   }
 })

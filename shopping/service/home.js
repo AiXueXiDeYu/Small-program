@@ -1,24 +1,29 @@
 import request from './network.js'
-// 向外提供了getMultiData 方法
+
 export const getMultiData = () => {
-  // 返回一个什么东西，上面有then 方法
+  // 返回一个什么东西， 上面有then 方法
   // 解决js 异步的良药
-  // return new Promise(() => {
-  //   // 立即执行一个耗时的任务
-  //   // resolve thenable
-  //   wx.request({
-  //     url: baseURL + option.url
-  //   })
-  // })
   return request({
-    url:'/home/multidata'
+    url: '/home/multidata',
+  })
+}
+// http://152.136.185.210:7878/api/hy66
+// /home/data?page=${page}&type=${type}
+export const getProduct = (type, page) => {
+  return request({
+    url: '/home/data',
+    data: {
+      type, 
+      page
+    }
   })
 }
 
-export  const getProducts = (type,page) => {
-  return request ( {
-    url:'/home/data',
-    data:{
+export const getProducts = (type, page) => {
+  console.log(getProducts)
+  return request({
+    url: '/home/data',
+    data: {
       type,
       page
     }
