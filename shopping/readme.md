@@ -167,4 +167,61 @@
   3. 跨页面， 跨项目， 开源到npm市场 
     vant ? 商业项目 大型一些可以采用
     使用第三方组件， 加快开发速度
-  
+
+- 接口的认识   当我们自己些项目时
+  1. 已有后端提供的接口
+  2. 加入项目刚开始， 没有接口可用怎么办？
+     
+    切换
+  3. 不要等接口 前端在自己开发时
+    我用fastmock, json 格式， 提供假接口
+    满足页面展示功能就可以了。 
+  4. 等到后端接口上线了， 将请求地址切换到线上地址，启用真接口
+  5. 在前后端分离之前， 接口文档写出来
+    约定好
+      URL   /home/multidata
+      返回的格式
+
+- 首页接口， 为何要分两个接口呢？
+  1. 商品表（评论表） 基础接口
+    后端执行是快的， 就一两条sql
+  2. 相关推荐
+    大数据， 推荐算法， 不是查表， 是要计算的。 
+    耗时， 会影响页面显示的速度
+  3. onLoad   一一列出
+    this._getGoodsInfo()
+    this._getRecommends()
+
+- 父子组件通信
+  1. page 是父亲
+    向子组件提供properties
+    并且还绑定了一个自定义事件 bind:event="handler"
+  2. 子组件
+    可以通过this.triggerEvent('event', 。。。。params)
+    向父组件通信， 
+
+- 加入购物车的商品， 如何到购物车页面也可以显示出来呢？
+  app.js globalData 
+
+- 购物车页面开发规则
+  1. 数据来自 app.globalData
+  2. 生命周期的概念
+    - app.js  onLaunch
+    - home.js  onLoad onShow.... onunload 
+    - cart.js   tabbar  不会销毁
+      onload  只会执行一次 
+      onshow 会执行多次 更新购物车数据
+
+- 数组的es6方法
+  1. for(let i = 0; i < arr.length;i++) {
+    计数循环， 对cpu友好， 但是对人不OK, 可读性不好
+  }
+    如果下标很重要的化
+  2. for es6 升级版
+    for (let item of arr) {
+
+    }
+  3. 数组好多功能方法
+    forEach 让每个元素都执行一个回调函数 
+    find  任然会像forEach 一样， 回调函数 return true , 返回当前项
+    reduce  累加计算 
