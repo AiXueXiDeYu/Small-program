@@ -1,0 +1,34 @@
+<view class="page">
+  <van-sticky>
+    <view class="dewu-hd">
+      <view class="dewu-hd__search" bindtap="gotoSearch">
+        <van-search placeholder="搜索商品" disabled></van-search>
+      </view>
+      <view class="dewu-kind">
+        <image src="https://cdn.poizon.com/node-common/R3JvdXAlMjA2QDN4MTU5MjIyMjY4OTE5Mw==.png" />
+      </view>
+    </view>
+  </van-sticky>
+  <!-- 丰富的api animated  -->
+  <van-tabs animated 
+  active="{{active}}"
+  color="white" swipeable sticky
+  tiyle-inactive-color="#aaaabb"
+  title-active-color="#000000"
+  >
+    <van-tab title="推荐">
+      <van-grid column-num="2" class="van-grid-bd">
+        <van-grid-item use-slot wx:for="{{products}}" wx:key="index">
+          <Goods info="{{item}}" />
+        </van-grid-item>
+      </van-grid>
+    </van-tab>
+    <van-tab title="食品">222</van-tab>
+    <van-tab title="艺术">333</van-tab>
+    <van-tab title="女装">444</van-tab>
+    <van-tab title="出行">555</van-tab>
+    <van-tab title="家居">666</van-tab>
+    <van-tab title="美妆">777</van-tab>
+    <van-tab title="家电">888</van-tab>
+  </van-tabs>
+</view>
